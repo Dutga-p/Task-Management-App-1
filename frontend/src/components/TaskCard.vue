@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-4 hover:shadow-xl transition">
-    <div class="flex justify-between items-start mb-3">
-      <h3 class="text-lg font-semibold text-gray-900">{{ task.title }}</h3>
-      <div class="flex space-x-2">
+  <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-3 hover:shadow-xl transition">
+    <div class="flex justify-between items-start mb-2">
+      <h3 class="text-base font-semibold text-gray-900">{{ task.title }}</h3>
+      <div class="flex space-x-1">
         <button
           @click="$emit('edit', task)"
-          class="text-gray-600 hover:text-gray-800 p-1 cursor-pointer"
+          class="text-gray-600 hover:text-gray-800 p-2 cursor-pointer"
           title="Editar"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -14,7 +14,7 @@
         </button>
         <button
           @click="$emit('delete', task)"
-          class="text-red-600 hover:text-red-800 p-1 cursor-pointer"
+          class="text-red-600 hover:text-red-800 p-2 cursor-pointer"
           title="Eliminar"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,11 +24,11 @@
       </div>
     </div>
 
-    <p v-if="task.description" class="text-gray-600 text-sm mb-3">
+    <p v-if="task.description" class="text-gray-600 text-sm mb-2">
       {{ task.description }}
     </p>
 
-    <div class="flex flex-wrap gap-2 mb-3">
+    <div class="flex flex-wrap gap-1 mb-2">
       <span
         :class="{
           'bg-amber-100 text-amber-800 border border-amber-200': task.status === 'pending',
@@ -70,14 +70,14 @@
       <button
         v-if="task.status !== 'completed'"
         @click="$emit('complete', task.id)"
-        class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1 rounded text-xs font-medium cursor-pointer"
+        class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-2 rounded text-xs font-medium cursor-pointer"
       >
         Completar
       </button>
       <button
         v-else
         @click="$emit('reopen', task.id)"
-        class="bg-slate-600 hover:bg-slate-700 text-white px-3 py-1 rounded text-xs font-medium cursor-pointer"
+        class="bg-slate-600 hover:bg-slate-700 text-white px-3 py-2 rounded text-xs font-medium cursor-pointer"
       >
         Reabrir
       </button>

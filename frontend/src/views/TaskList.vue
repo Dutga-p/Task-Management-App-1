@@ -96,77 +96,79 @@
       </div>
 
       <!-- Kanban Board -->
-      <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Pending Column -->
-        <div class="bg-gray-50 rounded-lg p-4">
-          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-            <div class="w-3 h-3 bg-amber-500 rounded-full mr-2"></div>
-            Pendientes ({{ pendingTasks.length }})
-          </h3>
-          <VueDraggableNext 
-            :list="pendingTasks"
-            group="tasks"
-            @change="(event) => onDragChange(event, 'pending')"
-            class="space-y-3 min-h-[200px]"
-          >
-            <TaskCard
-              v-for="task in pendingTasks"
-              :key="task.id"
-              :task="task"
-              @edit="editTask"
-              @delete="deleteTask"
-              @complete="completeTask"
-              @reopen="reopenTask"
-            />
-          </VueDraggableNext >
-        </div>
+      <div v-else class="overflow-x-auto">
+        <div class="flex md:grid md:grid-cols-3 gap-6 min-w-max md:min-w-0">
+          <!-- Pending Column -->
+          <div class="bg-gray-50 rounded-lg p-4 w-80 flex-shrink-0 md:w-auto">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+              <div class="w-3 h-3 bg-amber-500 rounded-full mr-2"></div>
+              Pendientes ({{ pendingTasks.length }})
+            </h3>
+            <VueDraggableNext
+              :list="pendingTasks"
+              group="tasks"
+              @change="(event) => onDragChange(event, 'pending')"
+              class="space-y-3 min-h-[200px]"
+            >
+              <TaskCard
+                v-for="task in pendingTasks"
+                :key="task.id"
+                :task="task"
+                @edit="editTask"
+                @delete="deleteTask"
+                @complete="completeTask"
+                @reopen="reopenTask"
+              />
+            </VueDraggableNext >
+          </div>
 
-        <!-- In Progress Column -->
-        <div class="bg-gray-50 rounded-lg p-4">
-          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-            <div class="w-3 h-3 bg-indigo-500 rounded-full mr-2"></div>
-            En Progreso ({{ inProgressTasks.length }})
-          </h3>
-          <VueDraggableNext 
-            :list="inProgressTasks"
-            group="tasks"
-            @change="(event) => onDragChange(event, 'in_progress')"
-            class="space-y-3 min-h-[200px]"
-          >
-            <TaskCard
-              v-for="task in inProgressTasks"
-              :key="task.id"
-              :task="task"
-              @edit="editTask"
-              @delete="deleteTask"
-              @complete="completeTask"
-              @reopen="reopenTask"
-            />
-          </VueDraggableNext >
-        </div>
+          <!-- In Progress Column -->
+          <div class="bg-gray-50 rounded-lg p-4 w-80 flex-shrink-0 md:w-auto">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+              <div class="w-3 h-3 bg-indigo-500 rounded-full mr-2"></div>
+              En Progreso ({{ inProgressTasks.length }})
+            </h3>
+            <VueDraggableNext
+              :list="inProgressTasks"
+              group="tasks"
+              @change="(event) => onDragChange(event, 'in_progress')"
+              class="space-y-3 min-h-[200px]"
+            >
+              <TaskCard
+                v-for="task in inProgressTasks"
+                :key="task.id"
+                :task="task"
+                @edit="editTask"
+                @delete="deleteTask"
+                @complete="completeTask"
+                @reopen="reopenTask"
+              />
+            </VueDraggableNext >
+          </div>
 
-        <!-- Completed Column -->
-        <div class="bg-gray-50 rounded-lg p-4">
-          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-            <div class="w-3 h-3 bg-emerald-500 rounded-full mr-2"></div>
-            Completadas ({{ completedTasks.length }})
-          </h3>
-          <VueDraggableNext 
-            :list="completedTasks"
-            group="tasks"
-            @change="(event) => onDragChange(event, 'completed')"
-            class="space-y-3 min-h-[200px]"
-          >
-            <TaskCard
-              v-for="task in completedTasks"
-              :key="task.id"
-              :task="task"
-              @edit="editTask"
-              @delete="deleteTask"
-              @complete="completeTask"
-              @reopen="reopenTask"
-            />
-          </VueDraggableNext >
+          <!-- Completed Column -->
+          <div class="bg-gray-50 rounded-lg p-4 w-80 flex-shrink-0 md:w-auto">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+              <div class="w-3 h-3 bg-emerald-500 rounded-full mr-2"></div>
+              Completadas ({{ completedTasks.length }})
+            </h3>
+            <VueDraggableNext
+              :list="completedTasks"
+              group="tasks"
+              @change="(event) => onDragChange(event, 'completed')"
+              class="space-y-3 min-h-[200px]"
+            >
+              <TaskCard
+                v-for="task in completedTasks"
+                :key="task.id"
+                :task="task"
+                @edit="editTask"
+                @delete="deleteTask"
+                @complete="completeTask"
+                @reopen="reopenTask"
+              />
+            </VueDraggableNext >
+          </div>
         </div>
       </div>
 

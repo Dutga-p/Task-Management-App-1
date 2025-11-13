@@ -37,13 +37,13 @@ task‑manager/
 
 ## Funcionalidades principales
 
-✅ CRUD completo de tareas (crear, leer, actualizar, eliminar)  
-✅ Filtrado por estado, prioridad o usuario asignado  
-✅ Cambio de estado (“pendiente” → “en curso” → “completada”)  
-✅ Asignación de tareas a usuarios específicos  
-✅ Interfaz clara, responsiva y moderna  
-✅ Persistencia de datos con control de errores  
-✅ Arquitectura escalable y desacoplada
+ CRUD completo de tareas (crear, leer, actualizar, eliminar)  
+ Filtrado por estado, prioridad o usuario asignado  
+ Cambio de estado (“pendiente” → “en curso” → “completada”)  
+ Asignación de tareas a usuarios específicos  
+ Interfaz clara, responsiva y moderna  
+ Persistencia de datos con control de errores  
+ Arquitectura escalable y desacoplada
 
 ---
 
