@@ -18,6 +18,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Tasks
     Route::apiResource('tasks', TaskController::class);
+    Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete']);
+    Route::patch('/tasks/{task}/reopen', [TaskController::class, 'reopen']);
     Route::get('/tasks-stats', [TaskController::class, 'stats']);
 
     // Categories
