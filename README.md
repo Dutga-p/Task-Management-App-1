@@ -2,7 +2,7 @@
 
 **Task Manager** es una aplicación **full‑stack** diseñada para gestionar tareas de manera eficiente.  
 Cuenta con una arquitectura modular que separa claramente el **frontend** y el **backend**, lo que facilita el mantenimiento, la escalabilidad y el desarrollo colaborativo.
-
+Despliegue: https://tastmanager12.netlify.app/
 ---
 
 ## Estructura del proyecto
