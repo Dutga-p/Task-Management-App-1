@@ -57,8 +57,8 @@ const authStore = useAuthStore()
 const router = useRouter()
 
 const form = ref({
-  email: '',
-  password: ''
+  email: 'david@gmail.com',
+  password: '12345678'
 })
 
 const handleLogin = async () => {
